@@ -46,5 +46,8 @@ export const entries = (object) => {
  * @returns {Object}
  */
 export const fromEntries = (entries) => {
-  return Object.fromEntries(entries);
+  return entries.reduce((acc, [key, value]) => {
+    acc[key] = value;
+    return acc;
+  }, {});
 };
